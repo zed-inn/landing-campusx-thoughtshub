@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "/about", Component: About },
       { path: "/privacy-policy", Component: PrivacyPolicy },
-      { path: "/terms-and-conditions", Component: TermsAndConditions },
+      { path: "/terms-conditions", Component: TermsAndConditions },
     ],
     ErrorBoundary: NotFound,
   },

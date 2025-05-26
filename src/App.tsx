@@ -10,7 +10,7 @@ function App() {
     "/",
     "/about",
     "/privacy-policy",
-    "/terms-and-conditions",
+    "/terms-conditions",
   ];
 
   return (

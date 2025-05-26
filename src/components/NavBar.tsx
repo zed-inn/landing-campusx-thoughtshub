@@ -14,7 +14,7 @@ const links = [
   ["about", "/about"],
 //   ["download", "/download"],
   ["privacy policy", "/privacy-policy"],
-  ["terms & conditions", "/terms-and-conditions"],
+  ["terms & conditions", "/terms-conditions"],
 ];
 
 const NavBar = ({ className }: { className?: string }) => {
