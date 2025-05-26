@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
         className="w-full h-64 object-cover rounded-md shadom "
       />
 
-      <h1 className="text-center text-5xl font-black tracking-wide text-gray-100">
+      <h1 className="text-center lg:text-5xl text-3xl font-black tracking-wide text-gray-100">
         Terms & Conditions
       </h1>
 

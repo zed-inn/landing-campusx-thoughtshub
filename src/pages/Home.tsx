@@ -35,12 +35,14 @@ const HomeActionButtons = ({
 }) => {
   return (
     <>
-      <Button
-        className="text-lg font-semibold tracking-wider bg-indigo-700 hover:bg-indigo-600 font-urban"
-        type="primary"
-      >
-        {btnText1}
-      </Button>
+      <a href="https://play.google.com/store/apps/details?id=agency.thoughtshub" target="_blank">
+        <Button
+          className="text-lg font-semibold tracking-wider bg-indigo-700 hover:bg-indigo-600 font-urban"
+          type="primary"
+        >
+          {btnText1}
+        </Button>
+      </a>
       <Button
         className="px-[18px!important] font-urban text-sm font-bold tracking-widest"
         type="secondary"

@@ -1,20 +1,22 @@
+import { useEffect, useState } from "react";
 import images from "../utils/images";
 import strings from "../utils/strings";
 import { Link, useLocation } from "react-router";
 
 interface SiteLinkProps {
   name: string;
+  shortName: string;
   to: string;
   path: string;
 }
 
 // [name, url]
 const links = [
-  ["home", "/"],
-  ["about", "/about"],
-//   ["download", "/download"],
-  ["privacy policy", "/privacy-policy"],
-  ["terms & conditions", "/terms-conditions"],
+  ["home", "Home", "/"],
+  ["about", "About", "/about"],
+  //   ["download", "Download", "/download"],
+  ["privacy policy", "Privacy policy", "/privacy-policy"],
+  ["terms & conditions", "T&C", "/terms-conditions"],
 ];
 
 const NavBar = ({ className }: { className?: string }) => {
@@ -34,9 +36,10 @@ const NavBar = ({ className }: { className?: string }) => {
           {links.map((link) => (
             <SiteLink
               name={link[0]}
+              shortName={link[1]}
               path={pathname}
-              to={link[1]}
-              key={link[1]} // unique url for every link
+              to={link[2]}
+              key={link[2]} // unique url for every link
             ></SiteLink>
           ))}
         </ul>
@@ -45,7 +48,15 @@ const NavBar = ({ className }: { className?: string }) => {
   );
 };
 
-const SiteLink = ({ name, to, path }: SiteLinkProps) => {
+const SiteLink = ({ name, shortName, to, path }: SiteLinkProps) => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Link
       to={to}
@@ -54,7 +65,7 @@ const SiteLink = ({ name, to, path }: SiteLinkProps) => {
         (path === to ? "text-white font-semibold" : null)
       }
     >
-      {strings.title(name)}
+      {width<= 390 ? shortName : strings.title(name)}
     </Link>
   );
 };
