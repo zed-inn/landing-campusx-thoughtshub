@@ -2,9 +2,17 @@ import { Outlet, useLocation } from "react-router";
 import NavBar from "./components/NavBar";
 import images from "./utils/images";
 import Footer from "./components/Footer";
+import { useEffect } from "react";
 
 function App() {
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    const container = document.getElementById("main");
+    if (container) {
+      container.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [pathname]);
 
   const pathsWithFooter = [
     "/",
@@ -38,7 +46,7 @@ function App() {
             }
           />
         </div>
-        <div className="w-full h-full relative overflow-auto p-2">
+        <div className="w-full h-full relative overflow-auto p-2" id="main">
           <div
             className={
               pathsWithFooter.includes(pathname) ? "w-full" : "w-full h-full"
