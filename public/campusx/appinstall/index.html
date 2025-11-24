@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download CampusX App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,
+        oklch(0.25 0.05 240) 0%,
+        oklch(0.18 0.08 260) 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated background particles */
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    body::before {
+      background: oklch(0.65 0.25 150);
+      top: -200px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    body::after {
+      background: oklch(0.6 0.22 220);
+      bottom: -200px;
+      right: -200px;
+      animation-delay: -10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(100px, -50px) scale(1.1); }
+      66% { transform: translate(-50px, 100px) scale(0.9); }
+    }
+
+    .container {
+      text-align: center;
+      max-width: 450px;
+      padding: 40px 30px;
+      background: oklch(0.98 0.005 240 / 0.95);
+      border-radius: 24px;
+      box-shadow:
+        0 20px 60px oklch(0.1 0.05 240 / 0.4),
+        0 0 0 1px oklch(0.9 0.01 240 / 0.5);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #text-head {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: oklch(0.2 0.05 240);
+      letter-spacing: -0.5px;
+      animation: fadeIn 0.8s ease-out 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .loader {
+      border: 4px solid oklch(0.85 0.02 240);
+      border-top: 4px solid oklch(0.55 0.2 150);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .loader::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top-color: oklch(0.65 0.22 200);
+      animation: spin 1.2s linear infinite reverse;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .text {
+      margin: 20px 0;
+      font-size: 16px;
+      color: oklch(0.45 0.05 240);
+      font-weight: 500;
+    }
+
+    .button-group {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 30px;
+      animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .download-button {
+      width: 100%;
+      max-width: 320px;
+      position: relative;
+    }
+
+    .download-button a,
+    .download-button .disabled-btn {
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 14px;
+      color: oklch(0.98 0.01 240);
+      font-weight: 600;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px oklch(0.3 0.1 150 / 0.3);
+    }
+
+    .download-button.android a {
+      background: linear-gradient(135deg,
+        oklch(0.65 0.25 150) 0%,
+        oklch(0.55 0.22 160) 100%);
+    }
+
+    .download-button.android a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+        transparent,
+        oklch(0.85 0.15 150 / 0.3),
+        transparent);
+      transition: left 0.5s ease;
+    }
+
+    .download-button.android a:hover::before {
+      left: 100%;
+    }
+
+    .download-button.android a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px oklch(0.3 0.15 150 / 0.4);
+    }
+
+    .download-button.android a:active {
+      transform: translateY(0);
+    }
+
+    .download-button.android a::after {
+      content: '→';
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .download-button.android a:hover::after {
+      transform: translateX(4px);
+    }
+
+    .download-button.ios .disabled-btn {
+      background: linear-gradient(135deg,
+        oklch(0.7 0.02 240) 0%,
+        oklch(0.65 0.02 240) 100%);
+      cursor: not-allowed;
+      opacity: 0.6;
+      color: oklch(0.5 0.02 240);
+      box-shadow: 0 2px 8px oklch(0.3 0.05 240 / 0.2);
+    }
+
+    .download-button.ios .disabled-btn::before {
+      content: '🍎';
+      font-size: 20px;
+    }
+
+    .coming-soon {
+      font-size: 13px;
+      color: oklch(0.55 0.08 240);
+      margin-top: 8px;
+      font-style: italic;
+      font-weight: 500;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .platform-message {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg,
+        oklch(0.95 0.02 240) 0%,
+        oklch(0.97 0.01 240) 100%);
+      box-shadow:
+        0 4px 16px oklch(0.3 0.05 240 / 0.15),
+        inset 0 1px 0 oklch(1 0 0 / 0.5);
+      border: 1px solid oklch(0.88 0.02 240);
+      animation: slideIn 0.5s ease-out 0.6s both;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .platform-message.show {
+      display: block;
+    }
+
+    .platform-message p {
+      margin: 10px 0;
+      color: oklch(0.35 0.05 240);
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .platform-message p:first-child {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .platform-message .highlight {
+      color: oklch(0.55 0.22 150);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .platform-message .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: oklch(0.55 0.22 150);
+      transform: scaleX(0);
+      transform-origin: right;
+      animation: underline 0.6s ease-out 1s forwards;
+    }
+
+    @keyframes underline {
+      to {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    /* Icon animations */
+    .icon {
+      display: inline-block;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+
+      #text-head {
+        font-size: 24px;
+      }
+
+      .download-button a,
+      .download-button .disabled-btn {
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="text-head">Download CampusX App</div>
+
+    <div class="loader" id="loader"></div>
+    <div class="text" id="loading-text">Detecting your device...</div>
+
+    <div class="platform-message" id="platform-message"></div>
+
+    <div class="button-group" id="button-group">
+      <div class="download-button android">
+        <a id="androidLink" href="#">
+          <span>Download for Android</span>
+        </a>
+      </div>
+      <div class="download-button ios">
+        <div class="disabled-btn">
+          <span>iOS - Coming Soon</span>
+        </div>
+        <div class="coming-soon">We're working on it!</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const url = window.location.href;
+    const urlObject = new URL(url);
+    const referralCode = urlObject.searchParams.get("referralCode");
+    const safeReferralCode = referralCode || "";
+
+    const androidAppLink = "https://play.google.com/store/apps/details?id=agency.thoughtshub";
+    // safeReferralCode
+    //   ? `https://play.google.com/store/apps/details?id=agency.thoughtshub
+    //   &referralCode=${safeReferralCode}`
+    //   : `https://play.google.com/store/apps/details?id=agency.thoughtshub`;
+
+    window.onload = () => {
+      console.log("Window loaded.");
+
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      console.log("User agent is:", userAgent);
+
+      const loader = document.getElementById("loader");
+      const loadingText = document.getElementById("loading-text");
+      const buttonGroup = document.getElementById("button-group");
+      const platformMessage = document.getElementById("platform-message");
+      const androidLink = document.getElementById("androidLink");
+
+      androidLink.href = androidAppLink;
+
+      let redirectUrl = "";
+      let messageHTML = "";
+
+      if (/android/i.test(userAgent)) {
+        console.log("Detected Android device.");
+        redirectUrl = androidAppLink;
+        messageHTML = `
+          <p><span class="icon">✓</span> Android device detected!</p>
+          <p>Redirecting you to <span class="highlight">Google Play Store</span>...</p>
+        `;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        console.log("Detected iOS device.");
+        messageHTML = `
+          <p><span class="icon">📱</span> iOS device detected</p>
+          <p>Our iOS app is <span class="highlight">coming soon</span>!</p>
+          <p>Stay tuned for updates.</p>
+        `;
+      } else if (/Macintosh/.test(userAgent) && !('ontouchend' in document)) {
+        console.log("Detected macOS desktop device.");
+        messageHTML = `
+          <p><span class="icon">💻</span> Mac detected</p>
+          <p>Scan QR code on your Android phone or download from the button below.</p>
+          <p><small>iOS version coming soon!</small></p>
+        `;
+      } else {
+        console.log("Unknown or desktop device.");
+        messageHTML = `
+          <p>Choose your platform below:</p>
+          <p><small>Currently available for Android only</small></p>
+        `;
+      }
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        loadingText.style.display = "none";
+
+        if (messageHTML) {
+          platformMessage.innerHTML = messageHTML;
+          platformMessage.classList.add("show");
+        }
+
+        buttonGroup.style.display = "flex";
+
+        if (redirectUrl && /android/i.test(userAgent)) {
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, 1500);
+        }
+      }, 1000);
+    };
+  </script>
+</body>
+</html>

@@ -35,7 +35,7 @@ const HomeActionButtons = ({
 }) => {
   return (
     <>
-      <a href="https://play.google.com/store/apps/details?id=agency.thoughtshub" target="_blank">
+      <a href="/campusx/appinstall/index.html">
         <Button
           className="text-lg font-semibold tracking-wider bg-indigo-700 hover:bg-indigo-600 font-urban"
           type="primary"
@@ -43,12 +43,14 @@ const HomeActionButtons = ({
           {btnText1}
         </Button>
       </a>
-      <Button
-        className="px-[18px!important] font-urban text-sm font-bold tracking-widest"
-        type="secondary"
-      >
-        {btnText2}
-      </Button>
+      <a href="#feedback-form">
+        <Button
+          className="px-[18px!important] font-urban text-sm font-bold tracking-widest"
+          type="secondary"
+        >
+          {btnText2}
+        </Button>
+      </a>
     </>
   );
 };
@@ -223,9 +225,15 @@ const Page4 = () => {
           <p className="text-gray-400">Drop your thoughts below</p>
         </div>
 
-        <form className="flex flex-col gap-2">
+        <form
+          className="flex flex-col gap-2"
+          id="feedback-form"
+          method="POST"
+          action={"https://api.thoughtshub.agency/feedback"}
+          target="_blank"
+        >
           <textarea
-            name="feedback"
+            name="message"
             id="feedback"
             className="bg-gray-300/95 w-full h-30 rounded-md p-4 text-black outline-none md:text-lg"
             placeholder="Write your thoughts!"

@@ -63,6 +63,7 @@ const CarouselIndexes = ({
         {values.map((_: any, i: number) => {
           return (
             <button
+              key={i}
               className={
                 "cursor-pointer w-2 h-2 rounded-full transition-colors " +
                 (i === currentImage ? "bg-white" : "bg-slate-900")
