@@ -32,8 +32,8 @@ function App() {
               pathname === "/"
                 ? images.bg2
                 : pathname === "/about"
-                ? images.bg1
-                : images.bg2
+                  ? images.bg1
+                  : images.bg2
             }
             alt="background_img"
             className={
@@ -41,8 +41,8 @@ function App() {
               (pathname === "/"
                 ? "opacity-20"
                 : pathname === "/about"
-                ? "opacity-40"
-                : "opacity-0")
+                  ? "opacity-40"
+                  : "opacity-0")
             }
           />
         </div>

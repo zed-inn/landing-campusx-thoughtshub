@@ -35,7 +35,7 @@ const HomeActionButtons = ({
 }) => {
   return (
     <>
-      <a href="/campusx/appinstall">
+      <a href="/campusx/app">
         <Button
           className="text-lg font-semibold tracking-wider bg-indigo-700 hover:bg-indigo-600 font-urban"
           type="primary"
