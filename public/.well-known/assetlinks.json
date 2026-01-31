@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "agency.thoughtshub",
       "sha256_cert_fingerprints": [
-        "FA:0D:A1:85:4A:C9:F4:93:B0:20:1E:6F:C2:B0:DD:90:F5:36:94:95:B1:EC:D5:D9:97:E7:53:C3:48:8E:CC:FA"
+        "FA:0D:A1:85:4A:C9:F4:93:B0:20:1E:6F:C2:B0:DD:90:F5:36:94:95:B1:EC:D5:D9:97:E7:53:C3:48:8E:CC:FA",
+        "C4:EA:E7:75:CC:1E:F2:3D:34:B5:93:59:FB:4C:3F:A5:1B:0C:43:34:62:78:A5:36:CC:E5:DE:A0:CB:55:9A:89"
       ]
     }
   }
