@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/app/:match*",
-      "destination": "/appg"
+      "source": "/app/(.*)*",
+      "destination": "/app"
     },
     {
       "source": "/(.*)",
