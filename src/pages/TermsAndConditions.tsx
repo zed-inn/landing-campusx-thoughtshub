@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
         <Section>
           <Content className="font-bold">Effective Date: 2025</Content>
           <Content>
-            Welcome to ThoughtsHub. By accessing or using our mobile
+            Welcome to CampusX. By accessing or using our mobile
             application, you agree to comply with and be bound by the following
             Terms and Conditions. If you do not agree to these terms, please do
             not use our services.
@@ -29,9 +29,9 @@ const TermsAndConditions = () => {
           <Heading>1. Introduction</Heading>
           <div>
             <Content>
-              ThoughtsHub ("we," "our," or "us") is a mobile application
+              CampusX ("we," "our," or "us") is a mobile application
               developed and operated in Jaipur, Rajasthan, India. These Terms
-              and Conditions govern your use of the ThoughtsHub app and its
+              and Conditions govern your use of the CampusX app and its
               services.
             </Content>
           </div>
@@ -54,7 +54,7 @@ const TermsAndConditions = () => {
             <Content>You may upload content including text and images.</Content>
             <Content>
               You retain ownership of your content, but by uploading it, you
-              grant ThoughtsHub a non-exclusive, royalty-free license to use,
+              grant CampusX a non-exclusive, royalty-free license to use,
               display, and distribute it within the app.
             </Content>
             <Content>You may edit or delete your content at any time.</Content>
@@ -78,9 +78,9 @@ const TermsAndConditions = () => {
           <Heading>5. Intellectual Property</Heading>
           <div>
             <Content>
-              All content provided by ThoughtsHub (including logo, design,
+              All content provided by CampusX (including logo, design,
               visuals, and trademarks) is our exclusive property. Users may not
-              copy, reproduce, or distribute any ThoughtsHub-exclusive content
+              copy, reproduce, or distribute any CampusX-exclusive content
               without prior written permission.
             </Content>
           </div>
@@ -101,7 +101,7 @@ const TermsAndConditions = () => {
           <Heading>7. Payments & Subscriptions</Heading>
           <div>
             <Content>
-              ThoughtsHub is currently a free service. There are no subscription
+              CampusX is currently a free service. There are no subscription
               services, in-app purchases, or paid features as of now.
             </Content>
           </div>

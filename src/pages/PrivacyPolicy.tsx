@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
           <Content className="font-bold">Effective Date: 2025</Content>
           <Content>
             Your privacy is important to us. This Privacy Policy outlines how
-            ThoughtsHub collects, uses, and protects your information when you
+            CampusX collects, uses, and protects your information when you
             use our mobile application.
           </Content>
         </Section>
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
           <div>
             <Content>
               Our content, logos, design elements, and trademarks are the
-              exclusive property of ThoughtsHub. Unauthorized use or
+              exclusive property of CampusX. Unauthorized use or
               reproduction is prohibited
             </Content>
           </div>

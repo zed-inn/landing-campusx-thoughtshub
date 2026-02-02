@@ -91,7 +91,7 @@ const Page2 = () => {
       <div className="w-full h-full md:p-18 p-6 mx-auto md:space-y-20 space-y-12 overflow-hidden -p-2 bg-black/55">
         <div>
           <h1 className="md:text-6xl text-4xl font-black text-orange-100 text-center">
-            Welcome to ThoughtsHub
+            Welcome to CampusX
           </h1>
           <p className="md:text-2xl text-lg text-gray-400 mt-3 font-light text-center">
             More than just an app, It's a{" "}
@@ -122,8 +122,8 @@ const Page2 = () => {
         <p className="md:text-4xl text-3xl text-center font-thin tracking-wide relative py-6">
           <span className="bg-black h-full w-[150vw] absolute -left-48 top-0 z-0 border border-gray-700"></span>
           <span className="relative z-10">
-            That's exactly what{" "}
-            <span className="font-semibold">ThoughtsHub</span> is built for.
+            That's exactly what <span className="font-semibold">CampusX</span>{" "}
+            is built for.
           </span>
         </p>
 
@@ -135,7 +135,7 @@ const Page2 = () => {
           />
           <div className="md:text-2xl sm:text-3xl text-xl font-light text-gray-300 absolute bottom-0 w-full h-full p-4 pt-8 bg-gradient-to-t from-black/75 from-55% to-transparent flex justify-end flex-col md:static md:bg-transparent md:h-fit md:p-0 ">
             <p>
-              ThoughtsHub is a powerful, student-first platform created to bring
+              CampusX is a powerful, student-first platform created to bring
               college students together from across the country and eventually
               the world.
             </p>
@@ -156,7 +156,7 @@ const Page3 = () => {
       <div className="md:p-18 p-6 md:space-y-15 space-y-12 bg-black">
         <div>
           <h1 className="lg:text-4xl text-3xl">
-            What can you expect inside ThoughtsHub?
+            What can you expect inside CampusX?
           </h1>
         </div>
 
@@ -212,8 +212,7 @@ const Page4 = () => {
     <div className="md:p-18 p-6 md:space-y-15 space-y-12 max-w-2xl ml-auto">
       <p className="md:text-xl text-lg">
         Whether you're preparing for exams, exploring a new topic, or just want
-        something meaningful to scroll through - ThoughtsHub is your go-to
-        space.
+        something meaningful to scroll through - CampusX is your go-to space.
       </p>
 
       <div className="space-y-8">
@@ -229,7 +228,7 @@ const Page4 = () => {
           className="flex flex-col gap-2"
           id="feedback-form"
           method="POST"
-          action={"https://api.thoughtshub.agency/feedback"}
+          action={"https://api.CampusX.agency/feedback"}
           target="_blank"
         >
           <textarea

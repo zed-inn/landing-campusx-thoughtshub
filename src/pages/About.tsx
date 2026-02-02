@@ -16,7 +16,7 @@ const About = () => {
 
       <AboutSection>
         <h1 className="md:text-6xl text-4xl font-bold">
-          Hi, We are ThoughtsHub Team
+          Hi, We are CampusX Team
         </h1>
 
         <p className="md:text-3xl lg:w-[80%] sm:text-2xl text-xl w-full text-right">
@@ -29,7 +29,7 @@ const About = () => {
         <span className="w-[150vw] absolute top-0 h-full -left-48 bg-black/55 z-0"></span>
 
         <h2 className="md:text-4xl text-3xl font-bold">
-          Dream of the ThoughtsHub App?
+          Dream of the CampusX App?
         </h2>
 
         <div className="-mx-2 relative md:text-2xl text-xl py-8 font-light">
@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         <p className="md:text-3xl text-2xl text-orange-400 font-bold tracking-wider">
-          That's the dream behind ThoughtsHub.
+          That's the dream behind CampusX.
         </p>
 
         <hr className="max-w-48 w-full border-gray-400" />
@@ -97,8 +97,8 @@ const About = () => {
                 together.
               </p>
               <p>
-                In a world that often overlooks student voices, ThoughtsHub is
-                built to{" "}
+                In a world that often overlooks student voices, CampusX is built
+                to{" "}
                 <span className="md:text-3xl text-2xl font-black text-purple-400">
                   amplify
                 </span>{" "}
