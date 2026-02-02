@@ -71,8 +71,8 @@ const Page1 = () => {
       />
       <div className="ml-auto lg:m-0 flex flex-col lg:items-end gap-2 md:gap-4 items-end mx-auto">
         <h1 className="text-4xl sm:text-6xl font-extrabold lg:text-7xl lg:font-black text-shadow-xs">
-          Thoughts
-          <span className="text-orange-500 font-space-grotesk">Hub</span>
+          Campus
+          <span className="text-orange-500 font-space-grotesk">X</span>
         </h1>
         <p className="text-lg text-slate-200 tracking-wide w-full text-right lg:text-2xl">
           A place to share thoughts and learn something new.
